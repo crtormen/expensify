@@ -14,9 +14,9 @@ exports[`should render ExpenseListItem component 1`] = `
   </h3>
   <p>
     Amount: 
-    195
-    , Date: 
-    0
+    $1.95
+     - Date: 
+    31/12/69
   </p>
 </div>
 `;
