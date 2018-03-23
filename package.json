@@ -10,7 +10,9 @@
     "serve": "live-server public/",
     "dev-server": "webpack-dev-server",
     "test": "jest --config=jest.config.json",
-    "test-watch": "jest --config=jest.config.json --watchAll "
+    "test-watch": "jest --config=jest.config.json --watchAll ",
+    "start": "node server/server.js",
+    "heroku-postbuild": "yarn run build:prod"
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
@@ -24,6 +26,7 @@
     "enzyme": "3.0.0",
     "enzyme-adapter-react-16": "1.0.0",
     "enzyme-to-json": "3.0.1",
+    "express": "^4.16.3",
     "jest": "^22.4.2",
     "live-server": "^1.2.0",
     "mini-css-extract-plugin": "^0.2.0",
