@@ -45,3 +45,27 @@ export const editExpense = (id, updates) => ({
     updates
 })
 
+//Action Generator SET_EXPENSES
+export const setExpenses = (expenses) => ({
+    type: 'SET_EXPENSES',
+    expenses
+});
+
+//Action Generator START_SET_EXPENSES
+export const startSetExpenses = () => {
+    return (dispatch) => {
+        //returns a promises, so that when use startSetExpenses, we can use "then"
+        return database.ref('expenses').once('value').then((snapshot) => {
+            let expenses = [];
+            snapshot.forEach((childSnapshot) => {
+                expenses.push({
+                    id: childSnapshot.key,
+                    ...childSnapshot.val()
+                })
+            });
+
+            dispatch(setExpenses(expenses));
+        });        
+    };
+};
+
