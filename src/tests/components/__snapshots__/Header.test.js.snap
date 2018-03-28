@@ -12,7 +12,7 @@ exports[`should render Header correctly 1`] = `
           activeClassName="is-active"
           ariaCurrent="true"
           exact={true}
-          to="/"
+          to="/dashboard"
         >
           Home
         </NavLink>
@@ -34,6 +34,11 @@ exports[`should render Header correctly 1`] = `
         >
           Help
         </NavLink>
+      </li>
+      <li>
+        <button>
+          Logout
+        </button>
       </li>
     </nav>
   </div>

@@ -26,13 +26,13 @@ test('should render EditExpensePage correctly', () => {
 
 test('should handle startEditExpense', () => {
     wrapper.find('ExpenseForm').prop('onSubmit')(expenses[2]);     
-    expect(history.push).lastCalledWith('/');
+    expect(history.push).lastCalledWith('/dashboard');
     expect(startEditExpense).lastCalledWith(expenses[2].id, expenses[2]);
 });
 
 test('should handle startRemoveExpense', () => {
     //executa button click com param, espera que parametros sejam passados corretamente
     wrapper.find('button').simulate('click');
-    expect(history.push).lastCalledWith('/');
+    expect(history.push).lastCalledWith('/dashboard');
     expect(startRemoveExpense).lastCalledWith({ id: expenses[2].id });
 });
