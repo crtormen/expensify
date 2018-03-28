@@ -30,7 +30,7 @@ test("should setup login action object", () => {
 //             uid
 //         });
 //         done();
-//         //database.auth().uid
+//         //database.auth.uid
 //     })
 // });
 

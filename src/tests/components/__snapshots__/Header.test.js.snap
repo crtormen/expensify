@@ -27,15 +27,6 @@ exports[`should render Header correctly 1`] = `
         </NavLink>
       </li>
       <li>
-        <NavLink
-          activeClassName="is-active"
-          ariaCurrent="true"
-          to="/help"
-        >
-          Help
-        </NavLink>
-      </li>
-      <li>
         <button>
           Logout
         </button>
