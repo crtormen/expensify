@@ -4,7 +4,6 @@ import 'react-dates/initialize';
 import { Provider } from 'react-redux';
 import AppRouter, { history } from './routers/AppRouter';
 import configureStore from './store/configureStore';
-import getVisibleExpenses from './selectors/expenses';
 import {startSetExpenses} from './actions/expenses';
 import { login, logout } from './actions/auth';
 import 'normalize.css/normalize.css';

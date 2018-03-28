@@ -21,7 +21,7 @@ beforeEach((done) => {
     expenses.forEach(({ id, description, note, amount, createdAt}) => {
         expensesData[id] = {description, note, amount, createdAt};
     });
-    database.ref(`users/${uid}/expenses`).set(expensesData).then(() => done()); //set dummy data on firebase
+    database.ref(`users/${uid}/expenses`).set(expensesData).then(() => done()).catch(done); //set dummy data on firebase
 });
 
 test("should setup remove expense action object", () => {
@@ -47,7 +47,7 @@ test("should remove expenses from firebase", (done) => {
     }).then((snapshot) => {
         expect(snapshot.val()).toBeFalsy();
         done();
-    });
+    }).catch(done);
 });
 
 test("should edit an existing expense", () => {
@@ -86,7 +86,7 @@ test("should edit expenses from firebase", (done) => {
     }).then((snapshot) => {
         expect(snapshot.val().description).toBe(updates.description);
         done();
-    });
+    }).catch(done);
 });
 
 
@@ -120,7 +120,7 @@ test("should add expense to database and store", (done) => {
     }).then((snapshot) => {
         expect(snapshot.val()).toEqual(expenseData);
         done();
-    });
+    }).catch(done);
 });
 
 
@@ -145,7 +145,7 @@ test("should set up add expenses action object with default values", (done) => {
     }).then((snapshot) => {
         expect(snapshot.val()).toEqual(defaultExpense);
         done();
-    });
+    }).catch(done);
 });
 
 test("should setup set expenses action object with data", () => {
@@ -165,5 +165,5 @@ test("should fetch the expenses from firebase", (done) => {
             expenses
         });
         done();
-    });
+    }).catch(done);
 });
